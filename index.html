@@ -1,170 +1,329 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[ishida manabu] PORTRAIT PORTFOLIO</title>
-    <meta name="description" content="石田学のポートレート・ポートフォリオ。キャリア15年の経験を活かした写真作品を紹介します。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="hero">
-        <div class="hero-bg">
-            <img src="portfolio/photo001.jpg" alt="Hero Image">
-            <div class="overlay"></div>
-        </div>
-        <div class="hero-content fade-in-up">
-            <h1 class="title">[ishida manabu] <br><span class="subtitle">PORTRAIT PORTFOLIO</span></h1>
-            <div class="scroll-indicator">
-                <p>Scroll to Explore</p>
-                <div class="line"></div>
-            </div>
-        </div>
-    </header>
+:root {
+    --bg-color: #050505;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --accent-color: #ffffff;
+    --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
+}
 
-    <main>
-        <section class="gallery" id="gallery">
-            <!-- Item 1 -->
-            <article class="gallery-item left-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo001.jpg" alt="Yohji Yamamoto s'yte" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【カタログ掲載実績：Yohji Yamamoto s'yte】</h2>
-                    <p>京都の路地裏にて、ブランドの世界観を「通せんぼ」という大胆なポージングで表現。ストリートの空気感と構図の妙が評価され、公式カタログに採用されました。</p>
-                </div>
-            </article>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <!-- Item 2 -->
-            <article class="gallery-item right-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo002.jpg" alt="80s レトロ・ハイコントラスト" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【80s レトロ・ハイコントラスト】</h2>
-                    <p>白い木々が印象的なスタジオにて、80年代のファッション誌のような力強いコントラストを意識。ヘアスタイルと衣装の質感を際立たせるライティングにこだわりました。</p>
-                </div>
-            </article>
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+}
 
-            <!-- Item 3 -->
-            <article class="gallery-item left-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo003.jpg" alt="ナチュラル・ビューティー" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【ナチュラル・ビューティー】</h2>
-                    <p>自然光が降り注ぐスタジオでのサロンスタイル撮影。被写体本来の美しさを引き出すため、あえて作り込みすぎず、透明感のある仕上がりを追求しました。</p>
-                </div>
-            </article>
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-            <!-- Item 4 -->
-            <article class="gallery-item right-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo004.jpg" alt="ディレクション＆アパレル撮影" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【ディレクション＆アパレル撮影】</h2>
-                    <p>アパレルブランド「Design note」の依頼により、モデル選定からディレクションまで担当。ストロボを用いた正確な描写で、デザイナーの意図を忠実に形にしました。</p>
-                </div>
-            </article>
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
 
-            <!-- Item 5 -->
-            <article class="gallery-item left-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo005.jpg" alt="秋の叙情・屋上ロケーション" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【秋の叙情・屋上ロケーション】</h2>
-                    <p>店舗屋上にて、秋の空と秋色ヘアをマッチング。強風という悪条件の中、一瞬の静止を狙い撃つ集中力で、物語性を感じる一枚を切り出しました。</p>
-                </div>
-            </article>
+p {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
 
-            <!-- Item 6 -->
-            <article class="gallery-item right-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo006.jpg" alt="単焦点レンズによる視線誘導" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【単焦点レンズによる視線誘導】</h2>
-                    <p>85mm単焦点レンズの開放F値を活かし、背景を大胆に整理。公園という公共の場でありながら、ノイズを排除し、ダークバイオレットの髪色とモデルの表情を際立たせています。</p>
-                </div>
-            </article>
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-            <!-- Item 7 -->
-            <article class="gallery-item left-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo007.jpg" alt="真夏の光のコントロール" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【真夏の光のコントロール】</h2>
-                    <p>真夏の強い木漏れ日の中、レンズフィルターを駆使して白飛びを制御。鮮やかなヘアカラーを損なうことなく、季節感あふれる柔らかな描写を実現しました。</p>
-                </div>
-            </article>
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
-            <!-- Item 8 -->
-            <article class="gallery-item right-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo008.jpg" alt="厳密な色再現・LEDライティング" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【厳密な色再現・LEDライティング】</h2>
-                    <p>シルバーグレーという繊細な髪色を正確に記録するため、定常光（LED）を選択。ストロボでは捉えにくい微細な色のニュアンスを、視覚的に追い込みながら撮影しました。</p>
-                </div>
-            </article>
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.7;
+    transform: scale(1.05);
+    animation: slowZoom 20s infinite alternate linear;
+}
 
-            <!-- Item 9 -->
-            <article class="gallery-item left-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo009.jpg" alt="キャラクター理解と世界観の構築" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【キャラクター理解と世界観の構築】</h2>
-                    <p>人気ゲーム「第五人格」のキャラクター撮影。単なる模倣ではなく、キャラクターの背景を理解した上でストロボワークを組み、没入感のある世界を表現しました。</p>
-                </div>
-            </article>
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.8) 100%);
+}
 
-            <!-- Item 10 -->
-            <article class="gallery-item right-align fade-in-up">
-                <div class="image-wrapper">
-                    <img src="portfolio/photo010.jpg" alt="中之島：エモーショナル・ナイト" loading="lazy">
-                </div>
-                <div class="text-wrapper">
-                    <h2>【中之島：エモーショナル・ナイト】</h2>
-                    <p>ランタンフェスティバルの灯りを活かした夜景撮影。スカジャンというストリートな要素と、幻想的な光を融合させ、エモく、重厚感のある一枚に仕上げました。</p>
-                </div>
-            </article>
-        </section>
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+}
 
-        <section class="about fade-in-up" id="about">
-            <div class="about-container">
-                <h2 class="section-title">ABOUT</h2>
-                <div class="about-content">
-                    <h3 class="name">Ishida Manabu <span>/ 石田 学</span></h3>
-                    <p class="bio">
-                        フォトグラファーとしてのキャリアは15年に及びます。<br>
-                        長年のサロンマネジメント経験を活かし、被写体の魅力を引き出すだけでなく、ディレクションやコンセプト設計から関わる撮影を得意としています。<br>
-                        光と影のコントロール、そして被写体とのコミュニケーションを通じて、物語性のある一枚を追求し続けています。
-                    </p>
-                    
-                    <div class="equipment">
-                        <h4>EQUIPMENT</h4>
-                        <ul>
-                            <li>SONY α7R IV</li>
-                            <li>Canon EOS 5D Mark III</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+.title {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
 
-    <footer>
-        <p>&copy; 2026 Ishida Manabu. All Rights Reserved.</p>
-    </footer>
+.subtitle {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.scroll-indicator {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+.scroll-indicator p {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 60px;
+    background-color: var(--text-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-indicator .line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--accent-color);
+    animation: scrollLine 2s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes scrollLine {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+}
+
+@keyframes slowZoom {
+    0% { transform: scale(1.02); }
+    100% { transform: scale(1.1); }
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10rem;
+    gap: 4rem;
+}
+
+.gallery-item:last-child {
+    margin-bottom: 6rem;
+}
+
+.image-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+.text-wrapper {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.text-wrapper h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+.text-wrapper p {
+    font-size: 1rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* Zig-Zag Layout */
+.right-align {
+    flex-direction: row-reverse;
+}
+
+/* About Section */
+.about {
+    padding: 8rem 5%;
+    background-color: #0a0a0a;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--text-secondary);
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content .name {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.about-content .name span {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.about-content .bio {
+    margin-bottom: 4rem;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+.equipment h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.equipment ul {
+    list-style: none;
+    color: var(--text-secondary);
+}
+
+.equipment li {
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer p {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+/* Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .gallery {
+        padding: 4rem 5%;
+    }
+
+    .gallery-item {
+        flex-direction: column !important;
+        margin-bottom: 6rem;
+        gap: 2rem;
+    }
+
+    .text-wrapper {
+        padding: 0;
+    }
+
+    .text-wrapper h2 {
+        font-size: 1.2rem;
+    }
+
+    .image-wrapper img {
+        max-height: 60vh;
+    }
+}
